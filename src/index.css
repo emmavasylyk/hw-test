@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @include font-face('Montserrat', '../fonts/Montserrat-Medium', 500);
+  @include font-face('Montserrat', '../fonts/Montserrat-SemiBold', 600);
+}
+
+body {
+ @apply font-medium font-montserrat
+}

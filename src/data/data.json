@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "user": "Elon Reeve Musk",
+        "tweets": 777,
+        "followers": 100500,
+        "avatar": "https://randomuser.me/api/portraits/men/31.jpg"
+    },
+    {
+        "id": 2,
+        "user": "Bonnie Wade",
+        "tweets": 654,
+        "followers": 90800,
+        "avatar": "https://randomuser.me/api/portraits/women/65.jpg"
+    },
+    {
+        "id": 3,
+        "user": "Ronnie Clayton",
+        "tweets": 823,
+        "followers": 101500,
+        "avatar": "https://randomuser.me/api/portraits/men/4.jpg"
+    },
+    {
+        "id": 4,
+        "user": "Katherine Bailey",
+        "tweets": 320,
+        "followers": 5700,
+        "avatar": "https://randomuser.me/api/portraits/women/23.jpg"
+    }
+]
