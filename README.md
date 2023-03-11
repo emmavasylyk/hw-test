@@ -1,4 +1,4 @@
-## Посилання на репозиторій
+## Посилання на макет
 https://www.figma.com/file/zun1oP6NmS2Lmgbcj6e1IG/Test
 
 ## Запуск сборки
