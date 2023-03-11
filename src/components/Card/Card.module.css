@@ -1,16 +1,16 @@
 .cardItem{
     background: url('../../assets/img/bg.png'), linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
-        background-repeat: no-repeat;
-        background-size: 308px auto, auto;
-        background-position: top 28px center, top center;
+    background-repeat: no-repeat;
+    background-size: 308px auto, auto;
+    background-position: top 28px center, top center;
     box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
-        border-radius: 20px;
-        width: 380px;
-        min-height: 460px;
-        padding: 20px 20px 36px;
+    border-radius: 20px;
+    width: 380px;
+    min-height: 460px;
+    padding: 20px 20px 36px;
 }
 .btn{
-    @apply text-[18px] text-center font-semibold leading-[1.2] block w-full max-w-[196px] mx-auto uppercase py-3.5 border-transparent rounded-[10px]
+@apply text-[18px] text-center font-semibold leading-[1.2] block w-full max-w-[196px] mx-auto uppercase py-3.5 border-transparent rounded-[10px]
 }
 .avatar{
 @apply object-cover rounded-full relative mx-auto mb-[35px] z-10
@@ -32,17 +32,16 @@
 }
 .wrapperAvatar::after {
     position: absolute;
-        width: 80px;
-        height: 80px;
-        display: block;
-            content: '';
-        margin: 0px auto;
-        border-radius: 50%;
-        background-color: rgb(235, 216, 255);
-        box-shadow: rgb(0 0 0 / 6%) 0px 5.11111px 5.11111px, rgb(174 123 227) 0px -2.55556px 5.11111px inset, rgb(251 248 255) 0px 5.11111px 3.83333px inset;
-        top: -9px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-
+    width: 80px;
+    height: 80px;
+    display: block;
+    content: '';
+    margin: 0px auto;
+    border-radius: 50%;
+    background-color: rgb(235, 216, 255);
+    box-shadow: rgb(0 0 0 / 6%) 0px 5.11111px 5.11111px, rgb(174 123 227) 0px -2.55556px 5.11111px inset, rgb(251 248 255) 0px 5.11111px 3.83333px inset;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
 }

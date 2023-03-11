@@ -1,39 +1,34 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
+import { valueConvertion } from "../../helpers/valueConvertion";
 import { Button } from "../Button/Button";
-import style from "./Card.module.css";
 import { ReactComponent as LogoIcon } from "../../assets/img/logo.svg";
-import { useLocaleStorage } from "../../hooks/useLocaleStorage";
+import style from "./Card.module.css";
 
-export const Card = ({ user, tweets, followers, avatar }) => {
-  const [active, setActive] = useState(false);
-  const [currentFollowers, setCurrentFollowers] = useLocaleStorage(
-    "followers",
-    followers
-  );
-  //   const [currentColor, setCurrentColor] = useLocaleStorage(
-  //     "color",
-  //     currentColor
-  //   );
-  //   console.log("currentColor", currentColor);
+export const Card = ({
+  id,
+  user,
+  tweets,
+  followers,
+  avatar,
+  follow,
+  onFollow,
+}) => {
+  const textBTn = follow ? "Following" : "Follow";
+  const currentColor = follow ? "bg-accent" : "bg-white";
 
-  const bgColor = active ? "bg-accent" : "bg-white";
-
-  const handleClick = () => {
-    setActive(!active);
-
-    if (active) {
-      setCurrentFollowers(currentFollowers - 1);
-      //   setCurrentColor((currentColor = "bg-accent"));
-    }
-
-    if (!active) {
-      setCurrentFollowers(currentFollowers + 1);
-      //   setCurrentColor(currentColor);
-    }
+  const isFollow = (num) => {
+    onFollow(id, num);
   };
 
-  const value = (followers) =>
-    followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const handleClick = () => {
+    if (follow) {
+      isFollow(-1);
+    }
+
+    if (!follow) {
+      isFollow(1);
+    }
+  };
 
   return (
     <li className={style.cardItem}>
@@ -50,12 +45,35 @@ export const Card = ({ user, tweets, followers, avatar }) => {
       <div>
         <div className="text-white uppercase font-medium text-[20px] leading-[1.2] text-center">
           <p className="mb-4">{tweets} Tweets</p>
-          <p className="mb-[26px]">{value(currentFollowers)} Followers</p>
+          <p className="mb-[26px]">{valueConvertion(followers)} Followers</p>
         </div>
-        <Button className={`${style.btn} ${bgColor}`} onClick={handleClick}>
-          {active ? "Following" : "Follow"}
-        </Button>
+        {!follow && (
+          <Button
+            className={`${style.btn} ${currentColor}`}
+            onClick={handleClick}
+          >
+            {textBTn}
+          </Button>
+        )}
+        {follow && (
+          <Button
+            className={`${style.btn} ${currentColor}`}
+            onClick={handleClick}
+          >
+            {textBTn}
+          </Button>
+        )}
       </div>
     </li>
   );
+};
+
+Card.propTypes = {
+  id: PropTypes.number,
+  user: PropTypes.string,
+  tweets: PropTypes.number,
+  followers: PropTypes.number,
+  avatar: PropTypes.string,
+  onFollow: PropTypes.func,
+  follow: PropTypes.bool,
 };
