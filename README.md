@@ -26,6 +26,8 @@ npm start
 |-- public
 |-- src
     |-- assets
+        |-- fonts
+        |-- img
     |-- components
         |-- Button
         |-- Card
